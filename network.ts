@@ -1,6 +1,6 @@
-import "dotenv/config"
+import config from "./config"
 
-const alchemyApiKey = process.env.ALCHEMY_API_KEY
+const { alchemyApiKey } = config
 
 if (!alchemyApiKey) {
   throw new Error("ALCHEMY_API_KEY is required")
