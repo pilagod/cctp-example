@@ -12,7 +12,13 @@ const network = {
     domain: 0,
     url: `https://eth-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
     address: {
-      USDC: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+      token: {
+        USDC: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+      },
+      cctp: {
+        TokenMessenger: "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
+        MessageTransmitter: "0x7865fAfC2db2093669d92c0F33AeEF291086BEFD",
+      },
     },
   },
   arbitrumSepolia: {
@@ -20,7 +26,13 @@ const network = {
     domain: 3,
     url: `https://arb-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
     address: {
-      USDC: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+      token: {
+        USDC: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+      },
+      cctp: {
+        TokenMessenger: "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
+        MessageTransmitter: "0xaCF1ceeF35caAc005e15888dDb8A3515C41B4872",
+      },
     },
   },
   baseSepolia: {
@@ -28,7 +40,13 @@ const network = {
     domain: 6,
     url: `https://base-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
     address: {
-      USDC: "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      token: {
+        USDC: "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      },
+      cctp: {
+        TokenMessenger: "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
+        MessageTransmitter: "0x7865fAfC2db2093669d92c0F33AeEF291086BEFD",
+      },
     },
   },
 }
