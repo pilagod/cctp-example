@@ -1,6 +1,6 @@
 import config from "./config"
 
-const { alchemyApiKey } = config
+const { alchemyApiKey, etherscan } = config
 
 if (!alchemyApiKey) {
   throw new Error("ALCHEMY_API_KEY is required")
@@ -33,6 +33,9 @@ const network = {
         TokenMessenger: "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
         MessageTransmitter: "0xaCF1ceeF35caAc005e15888dDb8A3515C41B4872",
       },
+    },
+    etherscan: {
+      apiKey: etherscan.apiKey.arbitrum,
     },
   },
   baseSepolia: {

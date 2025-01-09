@@ -5,12 +5,6 @@ import "hardhat-jest"
 
 import network from "./network"
 
-const alchemyApiKey = process.env.ALCHEMY_API_KEY
-
-if (!alchemyApiKey) {
-  throw new Error("ALCHEMY_API_KEY is required")
-}
-
 const config: HardhatUserConfig = {
   solidity: "0.8.28",
   networks: {
@@ -21,6 +15,21 @@ const config: HardhatUserConfig = {
     tests: "./test",
     cache: "./cache",
     artifacts: "./artifact",
+  },
+  etherscan: {
+    apiKey: {
+      ...Object.entries(network).reduce(
+        (result, [network, config]) => {
+          const { etherscan } = config as { etherscan?: { apiKey: string } }
+          if (!etherscan?.apiKey) {
+            return result
+          }
+          result[network] = etherscan.apiKey
+          return result
+        },
+        {} as Record<string, string>,
+      ),
+    },
   },
 }
 
