@@ -25,6 +25,7 @@
     "jest-mock-extended": "^4.0.0-beta1",
     "jest-when": "^3.7.0",
     "prettier": "^3.4.2",
+    "prettier-plugin-solidity": "^1.4.2",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",

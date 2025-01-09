@@ -1,4 +1,6 @@
+artifact
 cache
+typechain-types
 
 # Logs
 logs
