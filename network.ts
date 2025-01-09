@@ -13,7 +13,7 @@ const network = {
     url: `https://eth-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
     address: {
       token: {
-        USDC: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        Usdc: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
       },
       cctp: {
         TokenMessenger: "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
@@ -27,7 +27,7 @@ const network = {
     url: `https://arb-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
     address: {
       token: {
-        USDC: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+        Usdc: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
       },
       cctp: {
         TokenMessenger: "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
@@ -41,7 +41,7 @@ const network = {
     url: `https://base-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
     address: {
       token: {
-        USDC: "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+        Usdc: "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
       },
       cctp: {
         TokenMessenger: "0x9f3B8679c73C2Fef8b59B4f3444d4e156fb70AA5",
