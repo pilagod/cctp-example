@@ -1,13 +1,19 @@
 import config from "./config"
 
-const { alchemyApiKey, etherscan } = config
+const { alchemyApiKey } = config
 
 if (!alchemyApiKey) {
   throw new Error("ALCHEMY_API_KEY is required")
 }
 
+export enum Network {
+  Sepolia = "sepolia",
+  ArbitrumSepolia = "arbitrumSepolia",
+  BaseSepolia = "baseSepolia",
+}
+
 const network = {
-  sepolia: {
+  [Network.Sepolia]: {
     chainId: 11155111,
     domain: 0,
     url: `https://eth-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
@@ -21,7 +27,7 @@ const network = {
       },
     },
   },
-  arbitrumSepolia: {
+  [Network.ArbitrumSepolia]: {
     chainId: 421614,
     domain: 3,
     url: `https://arb-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
@@ -34,11 +40,8 @@ const network = {
         MessageTransmitter: "0xaCF1ceeF35caAc005e15888dDb8A3515C41B4872",
       },
     },
-    etherscan: {
-      apiKey: etherscan.apiKey.arbitrum,
-    },
   },
-  baseSepolia: {
+  [Network.BaseSepolia]: {
     chainId: 84532,
     domain: 6,
     url: `https://base-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,

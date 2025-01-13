@@ -3,12 +3,22 @@ import { HardhatUserConfig } from "hardhat/config"
 import "@nomicfoundation/hardhat-toolbox"
 import "hardhat-jest"
 
-import network from "./network"
+import config from "./config"
+import network, { Network } from "./network"
 
-const config: HardhatUserConfig = {
+const hardhatConfig: HardhatUserConfig = {
   solidity: "0.8.28",
   networks: {
-    ...network,
+    ...Object.entries(network).reduce(
+      (r, [n, c]) => {
+        r[n] = {
+          ...c,
+          accounts: [config.depositorPrivateKey],
+        }
+        return r
+      },
+      ({} as HardhatUserConfig["networks"])!,
+    ),
   },
   paths: {
     sources: "./contract",
@@ -18,19 +28,19 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      ...Object.entries(network).reduce(
-        (result, [network, config]) => {
-          const { etherscan } = config as { etherscan?: { apiKey: string } }
-          if (!etherscan?.apiKey) {
-            return result
-          }
-          result[network] = etherscan.apiKey
-          return result
-        },
-        {} as Record<string, string>,
-      ),
+      [Network.ArbitrumSepolia]: config.etherscan.apiKey.arbitrum,
     },
+    customChains: [
+      {
+        network: Network.ArbitrumSepolia,
+        chainId: network[Network.ArbitrumSepolia].chainId,
+        urls: {
+          apiURL: "https://api-sepolia.arbiscan.io/api",
+          browserURL: "https://sepolia.arbiscan.io/",
+        },
+      },
+    ],
   },
 }
 
-export default config
+export default hardhatConfig
