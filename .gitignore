@@ -1,5 +1,7 @@
 artifact
 cache
+ignition/deployments/**/*
+!ignition/deployments/**/deployed_addresses.json
 typechain-types
 
 # Logs
