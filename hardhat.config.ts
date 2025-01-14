@@ -13,7 +13,7 @@ const hardhatConfig: HardhatUserConfig = {
       (r, [n, c]) => {
         r[n] = {
           ...c,
-          accounts: [config.depositorPrivateKey],
+          accounts: [config.operator.privateKey],
         }
         return r
       },

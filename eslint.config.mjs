@@ -22,4 +22,7 @@ export default tseslint.config(
       ],
     },
   },
+  {
+    ignores: ["typechain-types"],
+  },
 )

@@ -26,7 +26,7 @@ async function main() {
   /* Source domain */
 
   const sepoliaDepositor = new Wallet(
-    config.depositorPrivateKey,
+    config.operator.privateKey,
     sepoliaProvider,
   )
   const sepoliaUsdc = new Contract(
@@ -62,7 +62,7 @@ async function main() {
 
   // This is the caller and recipient on Arbitrum Sepolia
   const arbitrumSepoliaCaller = new Wallet(
-    config.depositorPrivateKey,
+    config.operator.privateKey,
     arbitrumSepoliaProvider,
   )
 
